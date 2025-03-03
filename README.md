@@ -1,79 +1,103 @@
 # GESTION DES TACHES
 
-GESTION DES TACHES is a simple CRUD (Create, Read, Update, Delete) application built with FASTAPI. This application allows users to manage their tasks efficiently.
+**GESTION DES TACHES** est une application CRUD (Create, Read, Update, Delete) simple construite avec **FASTAPI**. Cette application permet aux utilisateurs de gérer leurs tâches efficacement.
 
-## Features
+## Fonctionnalités
 
-- Create new tasks
-- Read existing tasks
-- Update task details
-- Delete tasks
+- Créer de nouvelles tâches
+- Lire les tâches existantes
+- Mettre à jour les détails d'une tâche
+- Supprimer des tâches
 
 ## Installation
 
-1. **Clone the repository:**
+1. **Cloner le dépôt :**
 
    ```bash
    git clone https://github.com/yourusername/gestion-des-taches.git
    cd gestion-des-taches
-Create a virtual environment and activate it:
+   ```
 
-Copy
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-Install the required dependencies:
+2. **Créer et activer un environnement virtuel :**
 
-Copy
-pip install -r requirements.txt
-Run the application:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Sur Windows utilisez `venv\Scripts\activate`
+   ```
 
-Copy
-uvicorn main\:app --reload
-The application will be available at http://127.0.0.1:8000.
+3. **Installer les dépendances requises :**
 
-Usage
-Create a new task:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Copy
+4. **Lancer l'application :**
+
+   ```bash
+   uvicorn main:app --reload
+   ```
+
+   L'application sera disponible à [http://127.0.0.1:8000](http://127.0.0.1:8000).
+
+## Utilisation
+
+### Créer une nouvelle tâche :
+
+**Requête :**
+```http
 POST /tasks/
-Example request body:
-
-Copy
+```
+**Exemple de corps de requête :**
+```json
 {
-  "title": "Task Title",
-  "description": "Task Description",
+  "title": "Titre de la tâche",
+  "description": "Description de la tâche",
   "completed": false
 }
-Read all tasks:
+```
 
-Copy
+### Lire toutes les tâches :
+
+```http
 GET /tasks/
-Read a single task:
+```
 
-Copy
+### Lire une tâche spécifique :
+
+```http
 GET /tasks/{task_id}
-Update a task:
+```
 
-Copy
+### Mettre à jour une tâche :
+
+**Requête :**
+```http
 PUT /tasks/{task_id}
-Example request body:
-
-Copy
+```
+**Exemple de corps de requête :**
+```json
 {
-  "title": "Updated Task Title",
-  "description": "Updated Task Description",
+  "title": "Titre mis à jour",
+  "description": "Description mise à jour",
   "completed": true
 }
-Delete a task:
+```
 
-Copy
+### Supprimer une tâche :
+
+```http
 DELETE /tasks/{task_id}
-Contributing
-Contributions are welcome! Please open an issue or submit a pull request.
+```
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## Contribution
 
-Contact
-If you have any questions or suggestions, feel free to reach out to omarbouhdiida@gmail.com.
+Les contributions sont les bienvenues ! Merci d'ouvrir une issue ou de soumettre une pull request.
+
+## Licence
+
+Ce projet est sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+## Contact
+
+Si vous avez des questions ou des suggestions, n'hésitez pas à me contacter : **[omarbouhdiida@gmail.com](mailto:omarbouhdiida@gmail.com)**
 
